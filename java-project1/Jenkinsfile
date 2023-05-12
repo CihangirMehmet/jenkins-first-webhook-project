@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('build') {
+            steps {
+                echo 'Compiling the java source code123'
+                sh 'javac java-project1/hello.java'
+            }
+        }
+        stage('run') {
+            steps {
+                echo 'Running the compiled java code.123'
+                sh 'java java-project1/hello'
+            }
+        }
+    }
+}
